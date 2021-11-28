@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+.background {
+  background-image: url("https://bit.ly/3cXCoIk");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}

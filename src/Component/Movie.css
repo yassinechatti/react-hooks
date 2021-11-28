@@ -1,0 +1,12 @@
+.mov {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  flex-wrap: wrap;
+}
+.movies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}

@@ -1,19 +1,7 @@
 import React from "react";
-import Rating from "./FilterRating";
-const Filter = ({ setmovCards, movies }) => {
+const Filter = ({ inputT, setInputT }) => {
   const handleKeyUp = (e) => {
-    doFilter(e.target.value);
-  };
-
-  const doFilter = (name) => {
-    let movieToFilter = movies;
-    name === ""
-      ? setmovCards(movies)
-      : setmovCards(
-          movieToFilter.filter((move) =>
-            move.title.toLowerCase().includes(name.toLowerCase())
-          )
-        );
+    setInputT(e.target.value);
   };
 
   return (
@@ -21,8 +9,7 @@ const Filter = ({ setmovCards, movies }) => {
       <label htmlFor="#filter" style={{ color: "white" }}>
         Filter
       </label>
-      <input id="filter" onKeyUp={handleKeyUp}></input>
-      <Rating setmovCards={setmovCards} movies={movies} />
+      <input id="filter" value={inputT} onChange={handleKeyUp}></input>
     </div>
   );
 };

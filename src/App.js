@@ -4,6 +4,7 @@ import MovieList from "./Component/MovieList.js";
 import Filter from "../src/Component/Filter.js";
 import { useState } from "react";
 import Example from "./Component/Modal";
+import Rating from "./Component/FilterRating";
 
 let movies = [
   {
@@ -64,6 +65,8 @@ let movies = [
   },
 ];
 function App() {
+  const [inputT, setInputT] = useState("");
+  const [value, setValue] = useState(0);
   const [movCards, setmovCards] = useState(movies);
   const addMovie = (movie) => {
     movie.id = movies[movies.length - 1].id + 1;
@@ -72,9 +75,15 @@ function App() {
   };
   return (
     <div className="App background">
-      <Filter setmovCards={setmovCards} movies={movies} />
-      <MovieList movCards={movCards} />
-      <Example action={addMovie} />
+      <Rating value={value} setValue={setValue} />
+      <Filter
+        setmovCards={setmovCards}
+        movies={movies}
+        inputT={inputT}
+        setInputT={setInputT}
+      />
+      <MovieList movCards={movCards} inputT={inputT} value={value} />
+      <Example addMovie={addMovie} />
     </div>
   );
 }

@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-function Example({ action }) {
+function Example({ addMovie }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleSave = (e) => {
     setShow(false);
-    action({ title: e.target.title.value, rating: e.target.rate.value });
+    addMovie({
+      title: e.target.title.value,
+      rating: e.target.rate.value,
+      description: "this is a new movie",
+      posterURL: "",
+    });
     e.preventDefault();
   };
 

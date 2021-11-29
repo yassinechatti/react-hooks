@@ -1,17 +1,21 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import "./Movie.css";
-// import Example from "./Modal";
 
-const MovieList = ({ movCards }) => {
+const MovieList = ({ movCards, inputT, value }) => {
   return (
     <div className="movies">
       <div className="mov">
-        {movCards.map((card) => (
-          <MovieCard cardMovie={card} key={card.id} />
-        ))}
+        {movCards
+          .filter(
+            (movie) =>
+              movie.title.toLowerCase().includes(inputT.toLowerCase()) &&
+              movie.rating >= value
+          )
+          .map((card) => (
+            <MovieCard cardMovie={card} key={card.id} />
+          ))}
       </div>
-      {/* <Example /> */}
     </div>
   );
 };

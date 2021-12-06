@@ -10,8 +10,9 @@ function Example({ addMovie }) {
     addMovie({
       title: e.target.title.value,
       rating: e.target.rate.value,
-      description: "this is a new movie",
-      posterURL: "",
+      description: "This is a new movie",
+      posterURL:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJHkBW9gMn5ZPQiDmbT0t70Z2AuMdAeVXCKw&usqp=CAU",
     });
     e.preventDefault();
   };
